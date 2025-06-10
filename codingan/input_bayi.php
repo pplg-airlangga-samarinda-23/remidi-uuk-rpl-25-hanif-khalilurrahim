@@ -10,10 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nama = $_POST['nama'];
     $tinggi = $_POST['tinggi'];
     $berat = $_POST['berat'];
+    $tanggal = $_POST['tanggal'];
     $kader = $_POST['kader'];
 
-    $sql = "INSERT INTO data_bayi (nama, tinggi, berat, kader) VALUES (?, ?, ?, ?)";
-    $row = $conn->execute_query($sql, [$nama, $tinggi, $berat, $kader]);
+    $sql = "INSERT INTO data_bayi (nama, tinggi, berat, tanggal, kader) VALUES (?, ?, ?, ?, ?)";
+    $row = $conn->execute_query($sql, [$nama, $tinggi, $berat, $tanggal, $kader]);
     header("location: data_bayi.php");
 
 }
@@ -32,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="nama" placeholder="nama" required><br>
         <input type="text" name="tinggi" placeholder="tinggi" required><br>
         <input type="text" name="berat" placeholder="berat" required><br>
+        <input type="date" name="tanggal" placeholder="tanggal" required><br>
         <input type="text" name="kader" placeholder="kader" required><br>
         <button type="submit" href="data_bayi.php">Kirim</button><br>
         <div>

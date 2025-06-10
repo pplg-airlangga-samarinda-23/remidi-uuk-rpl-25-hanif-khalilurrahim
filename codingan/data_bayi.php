@@ -15,10 +15,13 @@ $rows = $conn->execute_query($sql)->fetch_all(MYSQLI_ASSOC);
         <div>
             <table>
                 <thead>
+                <th>No</th>
                 <th>Nama</th>
                 <th>Tinggi</th>
                 <th>Berat</th>
+                <th>tanggal</th>
                 <th>kader</th>
+                <th>action</th>
                 </thead>
                 <tbody>
                     <?php $no=0; foreach ($rows as $row) : ?>
@@ -27,6 +30,7 @@ $rows = $conn->execute_query($sql)->fetch_all(MYSQLI_ASSOC);
                             <td><?=$row['nama']?></td>
                             <td><?=$row['tinggi']?></td>
                             <td><?=$row['berat']?></td>
+                            <td><?=$row['tanggal']?></td>
                             <td><?=$row['kader']?></td>
                             <td>
                                 <a href="edit.php?id=<?=$row['id']?>">Edit</a>

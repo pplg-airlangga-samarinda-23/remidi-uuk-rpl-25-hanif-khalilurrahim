@@ -18,6 +18,7 @@ $rows = $conn->execute_query($sql)->fetch_all(MYSQLI_ASSOC);
                 <th>username</th>
                 <th>password</th>
                 <th>role</th>
+                <th>action</th>
                 </thead>
                 <tbody>
                     <?php $no=0; foreach ($rows as $row) : ?>
